@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Search, MapPin, ChevronDown } from "lucide-react";
-import LogoSvg from "../../public/Vector.svg";
 import Image from "next/image";
 import { JobFilters } from "../interface/job";
 import { JobFilterProps } from "../interface/job";
-import { locationOptions } from "..//utils/jobtype";
+import { locationOptions } from "../utils/jobtype";
 import { jobTypeOptions } from "../utils/jobtype";
 
 export default function JobFilter({ onFilterChange }: JobFilterProps) {
@@ -187,7 +186,7 @@ export default function JobFilter({ onFilterChange }: JobFilterProps) {
           <input
             type="text"
             placeholder="Search By Job Title, Role"
-            className="w-full pl-10 pr-4 py-4 border-r border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 placeholder-[#686868] text-[#686868] text-sm"
+            className="w-full pl-10 pr-4 py-4 border-r-2 border-gray-300 focus:outline-none  placeholder-[#686868] text-[#686868] text-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -196,7 +195,7 @@ export default function JobFilter({ onFilterChange }: JobFilterProps) {
         {/* Location Dropdown */}
         <div className="relative w-full" id="location-dropdown">
           <div
-            className="flex items-center w-full px-4 py-4 border-r border-gray-300 cursor-pointer"
+            className="flex items-center w-full px-4 py-4 border-r-2 border-gray-300 cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               setLocationDropdownOpen(!locationDropdownOpen);
@@ -237,7 +236,7 @@ export default function JobFilter({ onFilterChange }: JobFilterProps) {
         {/* Job Type Dropdown */}
         <div className="relative w-full" id="jobtype-dropdown">
           <div
-            className="flex items-center w-full px-4 py-4 border-r border-gray-300 cursor-pointer"
+            className="flex items-center w-full px-4 py-4 border-r-2 border-gray-300 cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               setJobTypeDropdownOpen(!jobTypeDropdownOpen);
@@ -245,7 +244,7 @@ export default function JobFilter({ onFilterChange }: JobFilterProps) {
             }}
           >
             <Image
-              src={LogoSvg}
+              src='.logo.svg'
               alt="Logo"
               className="w-4 h-4 text-[#686868] mr-2"
             />
