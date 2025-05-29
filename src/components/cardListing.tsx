@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Card } from './card';
-import { JobFilters } from "@/interface/job"; // Assuming JobFilters interface is defined
+import { Job, JobFilters } from "@/interface/job"; // Assuming JobFilters interface is defined
 import axios from 'axios';
 
 export default function CardListing({ filters = {} as JobFilters }) {  
@@ -64,7 +64,7 @@ export default function CardListing({ filters = {} as JobFilters }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {job.map((job:any) => (
+            {job.map((job:Job) => (
               <Card key={job.id} job={job} />
             ))}
           </div>

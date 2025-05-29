@@ -31,7 +31,6 @@ type JobFormProps = {
   closeForm: () => void;
 };
 
-const backendUrl = "http://localhost:3001";
 const convertJobType = (type: string) => type.toUpperCase();
 
 const JobDetailsForm: React.FC<JobFormProps> = ({ closeForm }) => {
