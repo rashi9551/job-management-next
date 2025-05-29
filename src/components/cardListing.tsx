@@ -20,7 +20,7 @@ export default function CardListing({ filters = {} as JobFilters }) {
           queryParams.append('maxSalary', String(filters.salary[1]));
         }
         console.log(...queryParams,"fasfs");
-        const response = await axios.get(`http://localhost:3001/jobs?${queryParams.toString()}`);
+        const response = await axios.get(`https://job-management-server-fb4e.onrender.com/jobs?${queryParams.toString()}`);
         setJob(response.data);
       } catch (error) {
         console.error('Failed to fetch jobs:', error);
