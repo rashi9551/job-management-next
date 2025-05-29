@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function CardListing({ filters = {} as JobFilters }) {  
   const [job, setJob] = useState([])
 
-
+  
   useEffect(() => {
     const fetchJobs = async () => {
       try {
