@@ -244,9 +244,11 @@ export default function JobFilter({ onFilterChange }: JobFilterProps) {
             }}
           >
             <Image
-              src='.logo.svg'
+              src="./Jobtype.svg"
               alt="Logo"
               className="w-4 h-4 text-[#686868] mr-2"
+              width='4'
+              height='4'
             />
             <span
               className={`flex-1 text-sm ${

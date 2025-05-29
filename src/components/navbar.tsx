@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import JobForm from "./Form";
 
 
 const Navbar= () => {
@@ -134,7 +135,17 @@ const Navbar= () => {
           </div>
         </div>
       </nav>
-
+      {isFormOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center h-screen overflow-y-auto">
+          <div
+            className="fixed inset-0 bg-black opacity-40"
+            onClick={closeForm}
+          ></div>
+           <div className="relative z-10">
+            <JobForm closeForm={closeForm} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import JobFilter from "@/components/jobFilter";
+import JobFilter from "@/components/Filter";
 import NavbarDemo from "@/components/navbar";
 import { JobFilters } from "@/interface/job";
 import { useCallback, useState } from "react";
