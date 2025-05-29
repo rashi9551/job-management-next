@@ -13,6 +13,8 @@ import {
   ArrowUpDown,
 } from "lucide-react";
 import { toast } from "react-toastify";
+import { jobTypeOptions, locationOptions } from "@/utils/jobtype";
+import axios from "axios";
 
 interface FormData {
   jobTitle: string;
@@ -29,9 +31,7 @@ type JobFormProps = {
   closeForm: () => void;
 };
 
-const backendUrl = "http://localhost:3000";
-const locationOptions = ["Remote", "Banglore", "Hyderabad", "Chennai", "Kochi"];
-const jobTypeOptions = ["Full-time", "Part-time", "Internship"];
+const backendUrl = "http://localhost:3001";
 const convertJobType = (type: string) => type.toUpperCase();
 
 const JobDetailsForm: React.FC<JobFormProps> = ({ closeForm }) => {
@@ -92,7 +92,6 @@ const JobDetailsForm: React.FC<JobFormProps> = ({ closeForm }) => {
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   };
-
   const onSubmit = async (data: FormData) => {
     const transformedData = {
       title: data.jobTitle,
@@ -105,14 +104,10 @@ const JobDetailsForm: React.FC<JobFormProps> = ({ closeForm }) => {
     };
 
     try {
-      const response = await fetch(`${backendUrl}/create-job`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(transformedData),
-      });
+      const response = await axios.post('http://localhost:3001/jobs', transformedData);
 
-      const result = await response.json();
-
+      const result = response.data;
+      console.log(result);
       if (result.success) {
         reset();
         toast.success("Job created successfully!");
@@ -122,7 +117,7 @@ const JobDetailsForm: React.FC<JobFormProps> = ({ closeForm }) => {
         throw new Error("Failed to create job");
       }
     } catch (err) {
-      console.error(err);
+      console.log(err);
       toast.error("Failed to create job.");
     }
   };

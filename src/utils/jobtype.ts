@@ -17,7 +17,7 @@ export function convertJobType(
 
 export const locationOptions = [
   "Chennai",
-  "Banglore",
+  "Bangalore",
   "Hyderabad",
   "Noida",
   "Remote",

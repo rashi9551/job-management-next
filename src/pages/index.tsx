@@ -29,7 +29,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#fbfbff]">
       <NavbarDemo/>
       <JobFilter onFilterChange={handleFilterChange} />
-      <CardListing/>
+      <CardListing filters={filters}/>
     </div>
   );
 }
