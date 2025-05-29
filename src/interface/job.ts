@@ -33,3 +33,7 @@ export type JobOpeningFormProps = {
 export interface JobFilterProps {
   onFilterChange: (filters: JobFilters) => void;
 }
+
+export type JobFormProps = {
+  closeForm: () => void;
+};

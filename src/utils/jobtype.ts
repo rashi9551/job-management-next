@@ -28,4 +28,7 @@ export const jobTypeOptions = [
   "Part-time",
   "Contract",
   "Internship",
+  "Remote",
+
+
 ];

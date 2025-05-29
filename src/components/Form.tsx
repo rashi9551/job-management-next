@@ -15,21 +15,11 @@ import {
 import { toast } from "react-toastify";
 import { jobTypeOptions, locationOptions } from "@/utils/jobtype";
 import axios from "axios";
+import {FormData,JobFormProps} from '../interface/job'
 
-interface FormData {
-  jobTitle: string;
-  companyName: string;
-  location: string;
-  jobType: string;
-  minSalary: string;
-  maxSalary: string;
-  applicationDeadline: Date | null;
-  jobDescription: string;
-}
 
-type JobFormProps = {
-  closeForm: () => void;
-};
+
+
 
 const convertJobType = (type: string) => type.toUpperCase();
 
